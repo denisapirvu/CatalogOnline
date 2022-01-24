@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentUserController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#SignOut" text="sign out" />
+            <JFXButton fx:id="materii" layoutY="122.0" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="200.0" text="Materii" />
+            <JFXButton fx:id="rapoarte" layoutY="164.0" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="200.0" text="Rapoarte" />
+            <JFXButton fx:id="date" layoutY="206.0" onAction="#handleButtonAction" prefHeight="42.0" prefWidth="200.0" text="Date de examen" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Pane fx:id="pnl_date" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <Pane fx:id="pnl_quiz" layoutX="400.0" layoutY="100.0" prefHeight="338.0" prefWidth="351.0" style="-fx-background-color: white;">
+                     <children>
+                        <RadioButton fx:id="date1" layoutX="41.0" layoutY="82.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="200.0" />
+                        <RadioButton fx:id="date2" layoutX="41.0" layoutY="141.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="200.0" />
+                        <RadioButton fx:id="date3" layoutX="41.0" layoutY="196.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="200.0" />
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="42.0" prefWidth="136.0" text="Materie">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="41.0" layoutY="274.0" mnemonicParsing="false" onAction="#trimite" prefHeight="42.0" prefWidth="149.0" text="Trimite" />
+                     </children>
+                  </Pane>
+                  <ComboBox fx:id="comboMaterii" layoutX="59.0" layoutY="59.0" prefWidth="150.0" promptText="selecteaza materia" />
+                  <TextField fx:id="grupa" layoutX="60.0" layoutY="28.0" onAction="#getMaterii" promptText="grupa" />
+                  <Button layoutX="70.0" layoutY="129.0" mnemonicParsing="false" onAction="#date" text="Vizualizeaza date" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnl_rapoarte" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="txtGrupa" layoutX="65.0" layoutY="82.0" promptText="Grupa" />
+                  <ComboBox fx:id="comboMat" layoutX="64.0" layoutY="136.0" prefWidth="150.0" promptText="selecteaza materia" />
+                  <Button layoutX="65.0" layoutY="197.0" mnemonicParsing="false" onAction="#deschideRaportMaterie" prefHeight="25.0" prefWidth="149.0" text="Genereaza raport" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnl_materii" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <Label fx:id="userLbl" layoutX="882.0" layoutY="14.0" prefHeight="25.0" prefWidth="91.0" text="Label" />
+                  <TableView fx:id="table" layoutY="172.0" prefHeight="414.0" prefWidth="993.0">
+                    <columns>
+                      <TableColumn fx:id="numeMaterie" prefWidth="103.0" text="nume materie" />
+                      <TableColumn fx:id="tip" prefWidth="107.0" text="tip activitate" />
+                        <TableColumn fx:id="numeProfesor" prefWidth="106.0" text="nume profesor" />
+                        <TableColumn fx:id="emailProfesor" prefWidth="99.0" text="email profesor" />
+                        <TableColumn prefWidth="75.0" text="laborator 1">
+                           <columns>
+                              <TableColumn fx:id="lab11" prefWidth="75.0" text="nota" />
+                              <TableColumn fx:id="lab12" prefWidth="75.0" text="prezenta" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="laborator 2">
+                           <columns>
+                              <TableColumn fx:id="lab21" prefWidth="75.0" text="nota" />
+                              <TableColumn fx:id="lab22" prefWidth="75.0" text="prezenta" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="laborator 3">
+                           <columns>
+                              <TableColumn fx:id="lab31" prefWidth="75.0" text="nota" />
+                              <TableColumn fx:id="lab32" prefWidth="75.0" text="prezenta" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="laborator 4">
+                           <columns>
+                              <TableColumn fx:id="lab41" prefWidth="75.0" text="nota" />
+                              <TableColumn fx:id="lab42" prefWidth="75.0" text="prezenta" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="laborator 5">
+                           <columns>
+                              <TableColumn fx:id="lab51" prefWidth="75.0" text="nota" />
+                              <TableColumn fx:id="lab52" prefWidth="75.0" text="prezenta" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="laborator 6">
+                           <columns>
+                              <TableColumn fx:id="lab61" prefWidth="75.0" text="nota" />
+                              <TableColumn fx:id="lab62" prefWidth="75.0" text="prezenta" />
+                           </columns>
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+                  <Button layoutX="629.0" layoutY="79.0" mnemonicParsing="false" onAction="#schimbareParola" text="schimbare parola" />
+                  <TextField fx:id="parolaNoua" layoutX="696.0" layoutY="42.0" promptText="parola noua" />
+                  <TextField fx:id="parolaVeche" layoutX="534.0" layoutY="42.0" promptText="parola veche" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

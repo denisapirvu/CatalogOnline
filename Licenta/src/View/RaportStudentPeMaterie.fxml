@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RaportStudentMaterieController">
+   <children>
+      <LineChart fx:id="chart" layoutX="136.0" layoutY="47.0" prefHeight="339.0" prefWidth="414.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="x" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label fx:id="absente" layoutX="88.0" layoutY="10.0" prefHeight="25.0" prefWidth="61.0" text="Label" />
+      <Label layoutX="14.0" layoutY="14.0" text="Nr absente" />
+      <Label layoutX="14.0" layoutY="43.0" text="Nr prezente" />
+      <Label fx:id="prezente" layoutX="88.0" layoutY="43.0" text="Label" />
+   </children>
+</AnchorPane>

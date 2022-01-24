@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TeacherUser2Controller">
+   <children>
+      <AnchorPane layoutX="213.0" layoutY="2.0" prefHeight="600.0" prefWidth="1000.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Pane fx:id="panel" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <TableView fx:id="table" layoutX="14.0" layoutY="249.0" prefHeight="317.0" prefWidth="900.0">
+                    <columns>
+                        <TableColumn fx:id="id_inregistrare" prefWidth="75.0" text="id_inregistrare" />
+                      <TableColumn fx:id="id_student" prefWidth="75.0" text="id" />
+                      <TableColumn fx:id="nume" prefWidth="75.0" text="nume" />
+                        <TableColumn fx:id="prenume" prefWidth="75.0" text="prenume" />
+                        <TableColumn fx:id="grupa" prefWidth="75.0" text="grupa" />
+                        <TableColumn fx:id="lab1" prefWidth="75.0" text="laborator 1">
+                           <columns>
+                              <TableColumn fx:id="lab11" prefWidth="75.0" text="prezenta" />
+                              <TableColumn fx:id="lab12" prefWidth="75.0" text="nota" />
+                           </columns></TableColumn>
+                        <TableColumn fx:id="lab2" prefWidth="75.0" text="laborator 2">
+                           <columns>
+                              <TableColumn fx:id="lab21" prefWidth="75.0" text="prezenta" />
+                              <TableColumn fx:id="lab22" prefWidth="75.0" text="nota" />
+                           </columns></TableColumn>
+                        <TableColumn fx:id="lab3" prefWidth="75.0" text="laborator 3">
+                           <columns>
+                              <TableColumn fx:id="lab31" prefWidth="75.0" text="prezenta" />
+                              <TableColumn fx:id="lab32" prefWidth="75.0" text="nota" />
+                           </columns></TableColumn>
+                        <TableColumn fx:id="lab4" prefWidth="75.0" text="laborator 4">
+                           <columns>
+                              <TableColumn fx:id="lab41" prefWidth="75.0" text="prezenta" />
+                              <TableColumn fx:id="lab42" prefWidth="75.0" text="nota" />
+                           </columns></TableColumn>
+                        <TableColumn fx:id="lab5" prefWidth="75.0" text="laborator 5">
+                           <columns>
+                              <TableColumn fx:id="lab51" prefWidth="75.0" text="prezenta" />
+                              <TableColumn fx:id="lab52" prefWidth="75.0" text="nota" />
+                           </columns></TableColumn>
+                        <TableColumn fx:id="lab6" prefWidth="75.0" text="laborator 6">
+                           <columns>
+                              <TableColumn fx:id="lab61" prefWidth="75.0" text="prezenta" />
+                              <TableColumn fx:id="lab62" prefWidth="75.0" text="nota" />
+                           </columns></TableColumn>
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="txtNume" layoutX="176.0" layoutY="41.0" promptText="nume" />
+                  <TextField fx:id="txtIDStudent" layoutX="14.0" layoutY="41.0" promptText="IDStudent" />
+                  <TextField fx:id="txtPrenume" layoutX="334.0" layoutY="41.0" promptText="prenume" />
+                  <TextField fx:id="txtNotaLaborator" layoutX="334.0" layoutY="93.0" promptText="nota laborator" />
+                  <Button fx:id="update" layoutX="19.0" layoutY="185.0" mnemonicParsing="false" onAction="#Update" text="Update" />
+                  <Button layoutX="151.0" layoutY="185.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+                  <RadioButton fx:id="prezent" layoutX="19.0" layoutY="144.0" mnemonicParsing="false" text="Prezent" />
+                  <RadioButton fx:id="absent" layoutX="133.0" layoutY="144.0" mnemonicParsing="false" text="Absent" />
+                  <ComboBox fx:id="combo" layoutX="175.0" layoutY="93.0" prefWidth="150.0" promptText="Alege Laborator" />
+                  <Button fx:id="emptyFields" layoutX="215.0" layoutY="185.0" mnemonicParsing="false" onAction="#emptyFields" text="Empty fields" />
+                  <TextField fx:id="searchField" layoutX="765.0" layoutY="66.0" promptText="Search" />
+                  <Label fx:id="userLbl" layoutX="765.0" layoutY="33.0" prefHeight="17.0" prefWidth="150.0" text="USER" />
+                  <TextField fx:id="txtIDInregistrare" layoutX="14.0" layoutY="93.0" promptText="IDInregistrare" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnl_view" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <ComboBox fx:id="comboMaterie" layoutX="72.0" layoutY="66.0" onAction="#getGrupeByIdProf" prefWidth="150.0" promptText="Alege Materie" />
+                  <ComboBox fx:id="comboGrupa" layoutX="72.0" layoutY="129.0" prefWidth="150.0" promptText="Alege grupa" />
+                  <ComboBox fx:id="comboTipRaport" layoutX="72.0" layoutY="188.0" prefWidth="150.0" promptText="Alege tip raport" />
+                  <Button layoutX="82.0" layoutY="255.0" mnemonicParsing="false" onAction="#valMediePeLab" text="Generare raport" />
+               </children></Pane>
+            <Pane fx:id="pnl" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <ComboBox fx:id="comboPolMaterie" layoutX="38.0" layoutY="75.0" onAction="#getGrupeByIdProf" prefWidth="150.0" promptText="Alege materie" />
+                  <ComboBox fx:id="comboPolGrupa" layoutX="38.0" layoutY="129.0" prefWidth="150.0" promptText="Alege grupa" />
+                  <TextField fx:id="data1" layoutX="39.0" layoutY="197.0" promptText="Data 1" />
+                  <TextField fx:id="data2" layoutX="214.0" layoutY="197.0" promptText="Data 2" />
+                  <TextField fx:id="data3" layoutX="381.0" layoutY="197.0" promptText="Data 3" />
+                  <Button layoutX="39.0" layoutY="263.0" mnemonicParsing="false" onAction="#trimiteQuiz" prefHeight="25.0" prefWidth="150.0" text="Trimite" />
+                  <Button layoutX="39.0" layoutY="336.0" mnemonicParsing="false" onAction="#vizualizeazaRezultate" prefHeight="25.0" prefWidth="150.0" text="Vizualizare rezultate" />
+               </children></Pane>
+            <Pane fx:id="pnl_materie" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <Button fx:id="newGrupa" layoutX="58.0" layoutY="58.0" mnemonicParsing="false" onAction="#newGrupa" prefHeight="29.0" prefWidth="125.0" text="Grupa noua" />
+                  <HBox fx:id="hbox" layoutX="58.0" layoutY="151.0" prefHeight="164.0" prefWidth="561.0">
+                     <children>
+                        <ComboBox fx:id="comboMaterie2" onAction="#grupe" prefWidth="150.0" promptText="selecteaza materie" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="newMaterie" layoutX="224.0" layoutY="58.0" mnemonicParsing="false" onAction="#MaterieNoua" prefHeight="29.0" prefWidth="125.0" text="Materie noua" />
+                  <Label fx:id="idProf" layoutX="836.0" layoutY="27.0" prefHeight="25.0" prefWidth="112.0" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-2.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="3.0" layoutY="1.0" prefHeight="600.0" prefWidth="40.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <DropShadow />
+               </effect></AnchorPane>
+            <JFXButton fx:id="btn_materie" alignment="TOP_CENTER" graphicTextGap="30.0" layoutX="3.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="212.0" text="MATERIE">
+               <graphic>
+
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn_view" alignment="TOP_CENTER" graphicTextGap="30.0" layoutX="3.0" layoutY="102.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="211.0" text="RAPOARTE">
+               <graphic>
+
+               </graphic></JFXButton>
+            <JFXButton fx:id="btn" alignment="TOP_CENTER" graphicTextGap="30.0" layoutX="3.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="211.0" text="      PLANIFICARE EXAMENE">
+               <graphic>
+
+               </graphic></JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Button mnemonicParsing="false" onAction="#SignOut" text="SignOut" />
+   </children>
+</AnchorPane>

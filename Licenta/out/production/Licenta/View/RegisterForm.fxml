@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="284.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterFormController">
+   <children>
+      <TextField fx:id="txtNume" layoutX="53.0" layoutY="44.0" promptText="nume" />
+      <TextField fx:id="txtPrenume" layoutX="216.0" layoutY="44.0" promptText="prenume" />
+      <TextField fx:id="txtEmail" layoutX="385.0" layoutY="44.0" promptText="email/grupa" />
+      <TextField fx:id="txtUsername" layoutX="53.0" layoutY="105.0" promptText="username" />
+      <TextField fx:id="txtPassword" layoutX="216.0" layoutY="105.0" promptText="password" />
+      <TextField fx:id="txtConfirmPass" layoutX="385.0" layoutY="105.0" promptText="confirm password" />
+      <Button layoutX="216.0" layoutY="175.0" mnemonicParsing="false" onAction="#inregistrare" prefHeight="39.0" prefWidth="126.0" text="Inregistrare" />
+      <ComboBox fx:id="comboBox" layoutX="53.0" layoutY="150.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
